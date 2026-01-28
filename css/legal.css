@@ -1,0 +1,189 @@
+/* ============================================
+   Creative Ventures - Legal Pages Stylesheet
+   ============================================ */
+
+/* Legal Page Layout */
+.legal-page {
+    min-height: 100vh;
+    padding-top: 120px;
+    padding-bottom: var(--spacing-3xl);
+}
+
+.legal-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Legal Header */
+.legal-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.legal-header h1 {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.6) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.last-updated {
+    font-size: var(--font-size-sm);
+    color: var(--text-tertiary);
+}
+
+/* Legal Content */
+.legal-content {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+}
+
+.legal-section {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.legal-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.legal-section h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--text-primary);
+}
+
+.legal-section p {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.legal-section p:last-child {
+    margin-bottom: 0;
+}
+
+.legal-section ul {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+    padding-left: 0;
+}
+
+.legal-section ul li {
+    position: relative;
+    padding-left: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.legal-section ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 6px;
+    height: 6px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+}
+
+.legal-section ul li strong {
+    color: var(--text-primary);
+}
+
+/* Imprint Specific */
+.imprint-block {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.imprint-block p {
+    margin-bottom: var(--spacing-xs);
+}
+
+.imprint-block p:last-child {
+    margin-bottom: 0;
+}
+
+/* Contact Info */
+.contact-info {
+    background: rgba(168, 128, 255, 0.1);
+    border: 1px solid rgba(168, 128, 255, 0.2);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.contact-info strong {
+    color: var(--accent-primary);
+}
+
+/* External Links */
+.external-link {
+    color: var(--accent-primary);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: var(--transition-fast);
+}
+
+.external-link:hover {
+    color: var(--accent-secondary);
+}
+
+/* Footer Active State for Legal Pages */
+.footer-links a.active {
+    color: var(--accent-primary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .legal-page {
+        padding-top: 100px;
+    }
+
+    .legal-container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .legal-header h1 {
+        font-size: var(--font-size-3xl);
+    }
+
+    .legal-content {
+        padding: var(--spacing-lg);
+    }
+
+    .legal-section h2 {
+        font-size: var(--font-size-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .legal-content {
+        padding: var(--spacing-md);
+        border-radius: var(--border-radius-lg);
+    }
+
+    .legal-section {
+        margin-bottom: var(--spacing-lg);
+        padding-bottom: var(--spacing-lg);
+    }
+}

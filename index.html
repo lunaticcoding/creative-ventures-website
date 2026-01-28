@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Ventures - App Development Studio</title>
+    <meta name="description" content="Creative Ventures is an app development studio creating innovative mobile experiences. Discover our portfolio including Newbo and Push Up Games.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-effects">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span class="logo-text">Creative Ventures</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-pill">
+                <span class="pill-icon">✨</span>
+                <span class="pill-text">Crafting Digital Experiences</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">We Build Apps</span>
+                <span class="title-line gradient-text">That Matter</span>
+            </h1>
+            <p class="hero-description">
+                Creative Ventures is an app development studio focused on creating
+                innovative mobile experiences that make a difference in people's lives.
+            </p>
+            <div class="hero-cta">
+                <a href="#portfolio" class="btn btn-primary">
+                    <span>View Our Work</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-cards">
+                <div class="floating-card card-1">
+                    <div class="card-icon">📱</div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon">💡</div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon">🎯</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="section-container">
+            <div class="section-header">
+                <span class="section-tag">Our Work</span>
+                <h2 class="section-title">App Portfolio</h2>
+                <p class="section-description">
+                    Discover the apps we've built to help people achieve their goals.
+                </p>
+            </div>
+
+            <div class="portfolio-grid">
+                <!-- Newbo App -->
+                <div class="portfolio-card" data-app="newbo">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="app-icon newbo-icon">
+                            <span>N</span>
+                        </div>
+                        <div class="app-info">
+                            <h3 class="app-name">Newbo</h3>
+                            <p class="app-tagline">Your Personal Finance Companion</p>
+                            <p class="app-description">
+                                Take control of your financial life with Newbo. Track expenses,
+                                set budgets, and achieve your savings goals with our intuitive
+                                and beautifully designed app.
+                            </p>
+                            <div class="app-status">
+                                <span class="status-badge live">
+                                    <span class="status-dot"></span>
+                                    Live
+                                </span>
+                            </div>
+                        </div>
+                        <a href="https://newbo.app" target="_blank" rel="noopener" class="card-link">
+                            <span>Visit Website</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+                                <polyline points="15 3 21 3 21 9"/>
+                                <line x1="10" y1="14" x2="21" y2="3"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Push Up Games -->
+                <div class="portfolio-card" data-app="pushup">
+                    <div class="card-glow"></div>
+                    <div class="card-content">
+                        <div class="app-icon pushup-icon">
+                            <span>💪</span>
+                        </div>
+                        <div class="app-info">
+                            <h3 class="app-name">Push Up Games</h3>
+                            <p class="app-tagline">Gamify Your Fitness Journey</p>
+                            <p class="app-description">
+                                Turn your workouts into an adventure. Compete with friends,
+                                unlock achievements, and level up your fitness with fun,
+                                engaging push-up challenges.
+                            </p>
+                            <div class="app-status">
+                                <span class="status-badge coming-soon">
+                                    <span class="status-dot"></span>
+                                    Coming Soon
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-link disabled">
+                            <span>Stay Tuned</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <div class="about-content">
+                <div class="about-text">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">Turning Ideas Into Reality</h2>
+                    <p class="about-description">
+                        At Creative Ventures, we believe in the power of well-crafted digital
+                        experiences. Our small but passionate team combines technical expertise
+                        with creative vision to build apps that users love.
+                    </p>
+                    <div class="about-values">
+                        <div class="value-item">
+                            <div class="value-icon">🎨</div>
+                            <div class="value-text">
+                                <h4>Design-First</h4>
+                                <p>Beautiful interfaces that delight users</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">⚡</div>
+                            <div class="value-text">
+                                <h4>Performance</h4>
+                                <p>Fast, reliable, and efficient apps</p>
+                            </div>
+                        </div>
+                        <div class="value-item">
+                            <div class="value-icon">❤️</div>
+                            <div class="value-text">
+                                <h4>User-Centric</h4>
+                                <p>Built for real people with real needs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="visual-card">
+                        <div class="visual-content">
+                            <div class="stat-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">2</span>
+                                    <span class="stat-label">Apps</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">∞</span>
+                                    <span class="stat-label">Passion</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <div class="contact-card">
+                <div class="card-glow"></div>
+                <div class="contact-content">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Let's Create Something Amazing</h2>
+                    <p class="contact-description">
+                        Have a project in mind or just want to say hello? We'd love to hear from you.
+                    </p>
+                    <a href="mailto:hello@creative-ventures.app" class="btn btn-primary btn-large">
+                        <span>Contact Us</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                            <polyline points="22,6 12,13 2,6"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo">Creative Ventures</span>
+                    <p class="footer-tagline">Building apps that matter.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="terms.html">Terms & Conditions</a>
+                    <a href="imprint.html">Imprint</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">&copy; <span id="year"></span> Creative Ventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
