@@ -20,10 +20,10 @@
 .imprint-block p{color:var(--ink);margin-bottom:4px}
 .imprint-block p strong{font-weight:700}
 
-/* simplified legal nav (no A/B toggle) */
+/* simplified nav for secondary pages (no A/B toggle, burger on mobile) */
 .nav.legal-nav{justify-content:flex-start;gap:40px}
 .nav.legal-nav .nav-links{margin-left:auto}
 @media (max-width:640px){
   .nav.legal-nav{flex-wrap:wrap}
-  .nav.legal-nav .nav-links{display:none}
+  .nav.legal-nav .nav-burger{margin-left:auto}
 }
