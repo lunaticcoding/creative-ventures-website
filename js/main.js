@@ -1,224 +1,78 @@
 /**
- * Creative Ventures - Main JavaScript
+ * Creative Ventures — living A/B test
  */
+(function () {
+  'use strict';
 
-$(document).ready(function() {
-    'use strict';
+  var root = document.documentElement;
 
-    // Set current year in footer
-    $('#year').text(new Date().getFullYear());
+  /* ---- year ---- */
+  var yr = document.getElementById('year');
+  if (yr) yr.textContent = new Date().getFullYear();
 
-    // Navigation scroll effect
-    const $navbar = $('.navbar');
-    const scrollThreshold = 50;
-
-    function handleScroll() {
-        if ($(window).scrollTop() > scrollThreshold) {
-            $navbar.addClass('scrolled');
-        } else {
-            $navbar.removeClass('scrolled');
-        }
+  /* ---- A/B variant switch ---- */
+  function setVariant(v) {
+    if (v !== 'a' && v !== 'b') return;
+    root.setAttribute('data-variant', v);
+    var btns = document.querySelectorAll('[data-variant-btn]');
+    for (var i = 0; i < btns.length; i++) {
+      var on = btns[i].getAttribute('data-variant-btn') === v;
+      btns[i].classList.toggle('is-active', on);
+      btns[i].setAttribute('aria-pressed', on ? 'true' : 'false');
     }
+  }
+  function otherVariant() {
+    return root.getAttribute('data-variant') === 'a' ? 'b' : 'a';
+  }
 
-    $(window).on('scroll', handleScroll);
-    handleScroll(); // Check initial state
+  var toggleBtns = document.querySelectorAll('[data-variant-btn]');
+  for (var i = 0; i < toggleBtns.length; i++) {
+    (function (btn) {
+      btn.addEventListener('click', function () { setVariant(btn.getAttribute('data-variant-btn')); });
+    })(toggleBtns[i]);
+  }
 
-    // Mobile menu toggle
-    const $navToggle = $('.nav-toggle');
-    const $navMenu = $('.nav-menu');
+  var flag = document.querySelector('.var-flag');
+  if (flag) flag.addEventListener('click', function () { setVariant(otherVariant()); });
 
-    $navToggle.on('click', function() {
-        $(this).toggleClass('active');
-        $navMenu.toggleClass('active');
-    });
+  // Clicking the demo paywall CTA also flips the experiment (it doesn't submit anything)
+  var payCta = document.querySelector('.paywall-cta');
+  if (payCta) payCta.addEventListener('click', function () { setVariant(otherVariant()); });
 
-    // Close mobile menu when clicking a link
-    $('.nav-link').on('click', function() {
-        $navToggle.removeClass('active');
-        $navMenu.removeClass('active');
-    });
-
-    // Close mobile menu when clicking outside
-    $(document).on('click', function(e) {
-        if (!$(e.target).closest('.navbar').length) {
-            $navToggle.removeClass('active');
-            $navMenu.removeClass('active');
-        }
-    });
-
-    // Smooth scroll for anchor links
-    $('a[href^="#"]').on('click', function(e) {
-        e.preventDefault();
-        const target = $(this.getAttribute('href'));
-        if (target.length) {
-            $('html, body').animate({
-                scrollTop: target.offset().top - 80
-            }, 600);
-        }
-    });
-
-    // Active nav link on scroll
-    const sections = $('section[id]');
-    const navLinks = $('.nav-link');
-
-    function updateActiveNavLink() {
-        const scrollPosition = $(window).scrollTop() + 100;
-
-        sections.each(function() {
-            const section = $(this);
-            const sectionTop = section.offset().top;
-            const sectionBottom = sectionTop + section.outerHeight();
-            const sectionId = section.attr('id');
-
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                navLinks.removeClass('active');
-                $(`.nav-link[href="#${sectionId}"]`).addClass('active');
-            }
-        });
+  /* ---- mobile nav ---- */
+  var nav = document.querySelector('.nav');
+  var burger = document.querySelector('.nav-burger');
+  if (nav && burger) {
+    burger.addEventListener('click', function () { nav.classList.toggle('open'); });
+    var links = nav.querySelectorAll('.nav-links a');
+    for (var j = 0; j < links.length; j++) {
+      links[j].addEventListener('click', function () { nav.classList.remove('open'); });
     }
+  }
 
-    $(window).on('scroll', updateActiveNavLink);
-    updateActiveNavLink();
-
-    // Fade in animation on scroll
-    function initFadeInAnimations() {
-        const fadeElements = [
-            '.section-header',
-            '.portfolio-card',
-            '.about-text',
-            '.about-visual',
-            '.contact-card'
-        ];
-
-        fadeElements.forEach(selector => {
-            $(selector).addClass('fade-in');
-        });
-
-        function checkFadeIn() {
-            $('.fade-in').each(function() {
-                const element = $(this);
-                const elementTop = element.offset().top;
-                const elementBottom = elementTop + element.outerHeight();
-                const viewportTop = $(window).scrollTop();
-                const viewportBottom = viewportTop + $(window).height();
-
-                // Check if element is in viewport
-                if (elementBottom > viewportTop && elementTop < viewportBottom - 100) {
-                    element.addClass('visible');
-                }
-            });
-        }
-
-        $(window).on('scroll', checkFadeIn);
-        checkFadeIn(); // Check initial state
-    }
-
-    initFadeInAnimations();
-
-    // Parallax effect for gradient orbs
-    function initParallax() {
-        const orbs = $('.gradient-orb');
-
-        $(window).on('mousemove', function(e) {
-            const mouseX = e.clientX / $(window).width();
-            const mouseY = e.clientY / $(window).height();
-
-            orbs.each(function(index) {
-                const speed = (index + 1) * 10;
-                const x = (mouseX - 0.5) * speed;
-                const y = (mouseY - 0.5) * speed;
-
-                $(this).css('transform', `translate(${x}px, ${y}px)`);
-            });
-        });
-    }
-
-    // Only enable parallax on desktop
-    if ($(window).width() > 768) {
-        initParallax();
-    }
-
-    // Portfolio card hover effects
-    $('.portfolio-card').on('mouseenter', function() {
-        $(this).find('.card-glow').css('opacity', '1');
-    }).on('mouseleave', function() {
-        $(this).find('.card-glow').css('opacity', '0');
+  /* ---- contact form → mailto fallback (no backend yet) ---- */
+  var form = document.getElementById('contact-form');
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      function val(n) { var el = form.querySelector('[name="' + n + '"]'); return el ? el.value.trim() : ''; }
+      var name = val('name'), email = val('email'), msg = val('message');
+      var subject = encodeURIComponent('Project enquiry — ' + (name || 'website'));
+      var body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + msg);
+      window.location.href = 'mailto:hello@creative-ventures.app?subject=' + subject + '&body=' + body;
     });
+  }
 
-    // Add subtle tilt effect to portfolio cards
-    if ($(window).width() > 768) {
-        $('.portfolio-card').on('mousemove', function(e) {
-            const card = $(this);
-            const rect = this.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-
-            const rotateX = (y - centerY) / 20;
-            const rotateY = (centerX - x) / 20;
-
-            card.css('transform', `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`);
-        }).on('mouseleave', function() {
-            $(this).css('transform', 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)');
-        });
-    }
-
-    // Button ripple effect
-    $('.btn').on('click', function(e) {
-        const button = $(this);
-        const ripple = $('<span class="ripple"></span>');
-
-        const rect = this.getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-
-        ripple.css({
-            left: x + 'px',
-            top: y + 'px'
-        });
-
-        button.append(ripple);
-
-        setTimeout(() => ripple.remove(), 600);
-    });
-
-    // Add ripple styles dynamically
-    $('<style>')
-        .text(`
-            .btn {
-                position: relative;
-                overflow: hidden;
-            }
-            .ripple {
-                position: absolute;
-                width: 20px;
-                height: 20px;
-                background: rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                transform: translate(-50%, -50%) scale(0);
-                animation: rippleEffect 0.6s ease-out;
-                pointer-events: none;
-            }
-            @keyframes rippleEffect {
-                to {
-                    transform: translate(-50%, -50%) scale(20);
-                    opacity: 0;
-                }
-            }
-        `)
-        .appendTo('head');
-
-    // Preloader (optional - uncomment if needed)
-    // $(window).on('load', function() {
-    //     $('.preloader').fadeOut(500);
-    // });
-
-    // Console Easter egg
-    console.log(
-        '%c Creative Ventures ',
-        'background: linear-gradient(135deg, #a880ff 0%, #ff80bf 100%); color: white; padding: 10px 20px; font-size: 16px; font-weight: bold; border-radius: 5px;'
-    );
-    console.log('Building apps that matter. 🚀');
-});
+  /* ---- scroll reveal ---- */
+  var revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    for (var k = 0; k < revealEls.length; k++) io.observe(revealEls[k]);
+  } else {
+    for (var m = 0; m < revealEls.length; m++) revealEls[m].classList.add('in');
+  }
+})();

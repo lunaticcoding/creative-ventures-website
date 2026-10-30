@@ -1,270 +1,238 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-variant="a">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Ventures - App Development Studio</title>
-    <meta name="description" content="Creative Ventures is an app development studio creating innovative mobile experiences. Discover our portfolio including Newbo and Push Up Games.">
+    <title>Creative Ventures — Data-driven product studio</title>
+    <meta name="description" content="Creative Ventures is a Munich product studio running A/B testing, data-driven design and Flutter engineering as one loop — so every release ships measured, not guessed.">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230E0E0D'/><text x='50' y='72' font-size='62' font-family='monospace' fill='%23E4451F' text-anchor='middle'>A</text></svg>">
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="background-effects">
-        <div class="gradient-orb orb-1"></div>
-        <div class="gradient-orb orb-2"></div>
-        <div class="gradient-orb orb-3"></div>
+    <!-- NAV -->
+    <header class="nav" id="top">
+        <a href="#top" class="wordmark">Creative Ventures</a>
+        <nav class="nav-links">
+            <a href="#services">Services</a>
+            <a href="#method">Method</a>
+            <a href="#lab">Ventures</a>
+        </nav>
+        <div class="toggle" role="group" aria-label="Live A/B variant switch">
+            <span class="toggle-dot" aria-hidden="true"></span>
+            <span class="toggle-label">LIVE A/B</span>
+            <div class="seg">
+                <button class="seg-btn is-active" data-variant-btn="a" aria-pressed="true">A</button>
+                <button class="seg-btn" data-variant-btn="b" aria-pressed="false">B</button>
+            </div>
+        </div>
+        <button class="nav-burger" aria-label="Toggle menu"><span></span><span></span></button>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-copy">
+            <div class="annot" data-exp>
+                <span class="mono muted">EXP-01 · HEADLINE</span>
+                <i class="annot-div"></i>
+                <span class="mono accent v-a">+12.4% ▲</span>
+                <span class="mono accent v-b">B +19.1% ▲</span>
+            </div>
+            <h1 class="hero-h1">
+                <span class="v-a">Design decisions,<br>settled by data.</span>
+                <span class="v-b">We don't guess.<br>We test.</span>
+            </h1>
+            <p class="hero-sub">A Munich product studio running A/B testing, data-driven design and Flutter engineering as one loop — so every release ships measured, not guessed.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-dark">Start a project <span aria-hidden="true">→</span></a>
+                <div class="annot" data-exp>
+                    <span class="mono muted">EXP-04 · CTA</span>
+                    <i class="annot-div"></i>
+                    <span class="mono accent">B +18.4% ▲</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-stage" aria-hidden="false">
+            <span class="stage-label mono muted">◐ LIVE PREVIEW · PAYWALL /checkout</span>
+
+            <div class="paywall-wrap">
+                <div class="paywall-ghost"></div>
+
+                <article class="paywall">
+                    <span class="mono cool paywall-badge">MEMBERSHIP</span>
+                    <h3 class="paywall-title">Unlock everything.</h3>
+                    <p class="paywall-desc">Full access to every experiment, template and playbook.</p>
+                    <div class="paywall-price"><b>€9</b> <span>/ month</span></div>
+                    <ul class="paywall-feats">
+                        <li>Unlimited A/B tests</li>
+                        <li>Live analytics dashboard</li>
+                        <li>Priority engineering support</li>
+                    </ul>
+                    <button class="paywall-cta" type="button">
+                        <span class="v-a">Start free trial</span>
+                        <span class="v-b">Unlock everything</span>
+                    </button>
+                    <p class="paywall-fine">Cancel anytime · No card required</p>
+                    <svg class="paywall-cursor" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 3l14 7-6.2 1.9L11 18 5 3z" fill="#0E0E0D" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+                </article>
+
+                <div class="chip-conv">
+                    <span class="mono">PAYWALL CONVERSION</span>
+                    <div><b class="v-a">15.6%</b><b class="v-b">18.4%</b> <i class="tri">▲</i></div>
+                </div>
+
+                <div class="annot annot-float" data-exp>
+                    <span class="mono muted">EXP-07 · PAYWALL CTA</span>
+                    <i class="annot-div"></i>
+                    <span class="mono accent">B beats A +18.4% ▲</span>
+                </div>
+
+                <button class="var-flag" type="button" aria-live="polite">
+                    <span class="var-flag-dot"></span>
+                    <span class="mono">VIEWING · VARIANT <b class="v-a">A</b><b class="v-b">B</b> · TAP TO SWITCH</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ANALYTICS STRIP -->
+    <div class="strip">
+        <div class="strip-metric"><span class="mono muted">◔ SCROLL DEPTH</span> <span class="mono accent" id="scrollpct">71%</span> <span class="mono muted">OF VISITORS PASS THE HERO</span></div>
+        <div class="strip-metric"><span class="mono muted">⧗ MEDIAN DWELL</span> <span class="mono accent">18.4s</span></div>
+        <div class="strip-metric"><span class="mono muted">◈ EXPERIMENTS LIVE</span> <span class="mono accent">7</span> <span class="mono muted">RIGHT NOW</span></div>
     </div>
 
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-text">Creative Ventures</span>
+    <!-- SERVICES -->
+    <section class="section services" id="services">
+        <header class="sec-head reveal">
+            <div class="eyebrow"><span class="mono accent">SERVICES</span> <span class="mono muted">/ 01</span></div>
+            <h2 class="sec-title">Three disciplines,<br>one loop.</h2>
+            <p class="sec-intro">Most teams buy these from three different vendors. We run them as one feedback loop — which is the only way the loop ever actually closes.</p>
+        </header>
+
+        <div class="svc reveal">
+            <div class="svc-l">
+                <div class="svc-idx"><span class="mono accent">01</span> <span class="mono muted">· 62% OF ENGAGEMENTS</span></div>
+                <h3 class="svc-name">A/B Testing</h3>
+                <p class="svc-tag">Ship the version that wins — not the one that argued best.</p>
+            </div>
+            <div class="svc-r">
+                <p class="svc-desc">We design experiments with real statistical rigor: hypotheses, power calculations, guardrail metrics. Then we run them in production until the result is unambiguous.</p>
+                <p class="mono svc-caps">Experiment design · Feature flags · Significance &amp; power · Guardrails · Holdouts</p>
+            </div>
+        </div>
+
+        <div class="svc reveal">
+            <div class="svc-l">
+                <div class="svc-idx"><span class="mono accent">02</span> <span class="mono muted">· BACKS EVERY PROJECT</span></div>
+                <h3 class="svc-name">Data-Driven Design</h3>
+                <p class="svc-tag">Every pixel has to earn its place.</p>
+            </div>
+            <div class="svc-r">
+                <p class="svc-desc">Research, analytics and event instrumentation feed straight into the design. We instrument first and design second, so behaviour — not the loudest opinion — settles the debate.</p>
+                <p class="mono svc-caps">Product analytics · Funnels &amp; retention · Event tracking · Usability research · Design systems</p>
+            </div>
+        </div>
+
+        <div class="svc reveal">
+            <div class="svc-l">
+                <div class="svc-idx"><span class="mono accent">03</span> <span class="mono muted">· ONE CODEBASE · 3 PLATFORMS</span></div>
+                <h3 class="svc-name">UX Flutter Engineering</h3>
+                <p class="svc-tag">One codebase. iOS, Android and web.</p>
+            </div>
+            <div class="svc-r">
+                <p class="svc-desc">We build what we design — cross-platform in Flutter, instrumented from day one, so every release ships measurable and feeds the next experiment.</p>
+                <p class="mono svc-caps">Flutter · iOS &amp; Android · Web · Design-to-code · Analytics SDKs · CI/CD</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- METHOD -->
+    <section class="section method" id="method">
+        <header class="sec-head reveal">
+            <div class="eyebrow"><span class="mono accent">METHOD</span> <span class="mono muted">/ 02</span></div>
+            <h2 class="sec-title">A loop, not a launch.</h2>
+            <p class="sec-intro">Software isn't finished when it ships — that's when the measuring starts. Every engagement runs in cycles, each one compounding on the last.</p>
+        </header>
+        <ol class="steps reveal">
+            <li class="step"><span class="mono accent">01</span><h4>Hypothesize</h4><p>State the bet — and exactly how we'll know if we're wrong.</p></li>
+            <li class="step"><span class="mono accent">02</span><h4>Design</h4><p>Explore in high fidelity, instrumented from the first frame.</p></li>
+            <li class="step"><span class="mono accent">03</span><h4>Ship</h4><p>Build it in Flutter and release behind a feature flag.</p></li>
+            <li class="step"><span class="mono accent">04</span><h4>Measure</h4><p>Watch real behaviour against the guardrail metrics.</p></li>
+            <li class="step"><span class="mono accent">05</span><h4>Iterate</h4><p>Keep the winner, cut the rest, raise the next bet.</p></li>
+        </ol>
+        <p class="mono muted loopback">↺  …and back to 01 — every cycle sharpens the last.</p>
+    </section>
+
+    <!-- THE LAB -->
+    <section class="section lab" id="lab">
+        <header class="sec-head reveal">
+            <div class="eyebrow"><span class="mono accent">THE LAB</span> <span class="mono muted">/ 03 · WHAT WE BUILD FOR OURSELVES</span></div>
+            <h2 class="sec-title">We don't only advise. We operate.</h2>
+            <p class="sec-intro">The same playbook, run on our own products and our own money. These aren't client projects — they're where we prove the method before it ever reaches you.</p>
+        </header>
+        <div class="lab-rows reveal">
+            <a class="lab-row" href="repsiq-nutrition.html">
+                <div class="lab-l"><span class="mono muted">01</span><span class="lab-name">Repsiq Nutrition</span></div>
+                <div class="lab-r"><span class="mono muted">Calorie tracking, measured</span><span class="mono accent">● Launching soon</span></div>
+                <svg class="lab-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <button class="nav-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-pill">
-                <span class="pill-icon">✨</span>
-                <span class="pill-text">Crafting Digital Experiences</span>
-            </div>
-            <h1 class="hero-title">
-                <span class="title-line">We Build Apps</span>
-                <span class="title-line gradient-text">That Matter</span>
-            </h1>
-            <p class="hero-description">
-                Creative Ventures is an app development studio focused on creating
-                innovative mobile experiences that make a difference in people's lives.
-            </p>
-            <div class="hero-cta">
-                <a href="#portfolio" class="btn btn-primary">
-                    <span>View Our Work</span>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="floating-cards">
-                <div class="floating-card card-1">
-                    <div class="card-icon">📱</div>
-                </div>
-                <div class="floating-card card-2">
-                    <div class="card-icon">💡</div>
-                </div>
-                <div class="floating-card card-3">
-                    <div class="card-icon">🎯</div>
-                </div>
-            </div>
+            <a class="lab-row" href="repsiq-gym.html">
+                <div class="lab-l"><span class="mono muted">02</span><span class="lab-name">Repsiq Gym</span></div>
+                <div class="lab-r"><span class="mono muted">Plans built for your gym</span><span class="mono muted">○ In development</span></div>
+                <svg class="lab-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M7 17L17 7M17 7H8M17 7V16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio">
-        <div class="section-container">
-            <div class="section-header">
-                <span class="section-tag">Our Work</span>
-                <h2 class="section-title">App Portfolio</h2>
-                <p class="section-description">
-                    Discover the apps we've built to help people achieve their goals.
-                </p>
-            </div>
-
-            <div class="portfolio-grid">
-                <!-- Newbo App -->
-                <div class="portfolio-card" data-app="newbo">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="app-icon newbo-icon">
-                            <span>N</span>
-                        </div>
-                        <div class="app-info">
-                            <h3 class="app-name">Newbo</h3>
-                            <p class="app-tagline">Your Personal Finance Companion</p>
-                            <p class="app-description">
-                                Take control of your financial life with Newbo. Track expenses,
-                                set budgets, and achieve your savings goals with our intuitive
-                                and beautifully designed app.
-                            </p>
-                            <div class="app-status">
-                                <span class="status-badge live">
-                                    <span class="status-dot"></span>
-                                    Live
-                                </span>
-                            </div>
-                        </div>
-                        <a href="https://newbo.app" target="_blank" rel="noopener" class="card-link">
-                            <span>Visit Website</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-                                <polyline points="15 3 21 3 21 9"/>
-                                <line x1="10" y1="14" x2="21" y2="3"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Push Up Games -->
-                <div class="portfolio-card" data-app="pushup">
-                    <div class="card-glow"></div>
-                    <div class="card-content">
-                        <div class="app-icon pushup-icon">
-                            <span>💪</span>
-                        </div>
-                        <div class="app-info">
-                            <h3 class="app-name">Push Up Games</h3>
-                            <p class="app-tagline">Gamify Your Fitness Journey</p>
-                            <p class="app-description">
-                                Turn your workouts into an adventure. Compete with friends,
-                                unlock achievements, and level up your fitness with fun,
-                                engaging push-up challenges.
-                            </p>
-                            <div class="app-status">
-                                <span class="status-badge coming-soon">
-                                    <span class="status-dot"></span>
-                                    Coming Soon
-                                </span>
-                            </div>
-                        </div>
-                        <div class="card-link disabled">
-                            <span>Stay Tuned</span>
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"/>
-                                <polyline points="12 6 12 12 16 14"/>
-                            </svg>
-                        </div>
-                    </div>
-                </div>
+    <!-- CONTACT -->
+    <section class="section contact" id="contact">
+        <div class="contact-l">
+            <div class="eyebrow"><span class="mono accent">CONTACT</span> <span class="mono dim">/ 04</span></div>
+            <h2 class="contact-title">Have a decision worth testing?</h2>
+            <p class="contact-sub">Tell us what you're trying to move. We'll tell you how we'd measure it — and what we'd ship first.</p>
+            <address class="contact-addr mono">
+                <span class="bright">CREATIVE VENTURES GMBH</span>
+                <span>Cosimastraße 121</span>
+                <span>81925 München · Germany</span>
+                <a href="mailto:hello@creative-ventures.app">hello@creative-ventures.app</a>
+            </address>
+            <div class="annot annot-dark">
+                <span class="mono dim">EXP-12 · FORM FIELDS</span>
+                <i class="annot-div"></i>
+                <span class="mono accent">3 fields +31% completion ▲</span>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="section-container">
-            <div class="about-content">
-                <div class="about-text">
-                    <span class="section-tag">About Us</span>
-                    <h2 class="section-title">Turning Ideas Into Reality</h2>
-                    <p class="about-description">
-                        At Creative Ventures, we believe in the power of well-crafted digital
-                        experiences. Our small but passionate team combines technical expertise
-                        with creative vision to build apps that users love.
-                    </p>
-                    <div class="about-values">
-                        <div class="value-item">
-                            <div class="value-icon">🎨</div>
-                            <div class="value-text">
-                                <h4>Design-First</h4>
-                                <p>Beautiful interfaces that delight users</p>
-                            </div>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-icon">⚡</div>
-                            <div class="value-text">
-                                <h4>Performance</h4>
-                                <p>Fast, reliable, and efficient apps</p>
-                            </div>
-                        </div>
-                        <div class="value-item">
-                            <div class="value-icon">❤️</div>
-                            <div class="value-text">
-                                <h4>User-Centric</h4>
-                                <p>Built for real people with real needs</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-visual">
-                    <div class="visual-card">
-                        <div class="visual-content">
-                            <div class="stat-grid">
-                                <div class="stat-item">
-                                    <span class="stat-number">2</span>
-                                    <span class="stat-label">Apps</span>
-                                </div>
-                                <div class="stat-item">
-                                    <span class="stat-number">∞</span>
-                                    <span class="stat-label">Passion</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <form class="contact-form" id="contact-form">
+            <div class="form-row">
+                <label class="field"><span class="mono dim">NAME</span><input type="text" name="name" placeholder="Your name" required></label>
+                <label class="field"><span class="mono dim">EMAIL</span><input type="email" name="email" placeholder="you@company.com" required></label>
             </div>
-        </div>
+            <label class="field"><span class="mono dim">WHAT ARE YOU TRYING TO MOVE?</span><textarea name="message" rows="4" placeholder="A metric, a launch, a decision you want tested…" required></textarea></label>
+            <button class="btn btn-accent form-submit" type="submit">Send message <span aria-hidden="true">→</span></button>
+            <p class="mono dim form-note">Typically replies within one working day</p>
+        </form>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="section-container">
-            <div class="contact-card">
-                <div class="card-glow"></div>
-                <div class="contact-content">
-                    <span class="section-tag">Get in Touch</span>
-                    <h2 class="section-title">Let's Create Something Amazing</h2>
-                    <p class="contact-description">
-                        Have a project in mind or just want to say hello? We'd love to hear from you.
-                    </p>
-                    <a href="mailto:hello@creative-ventures.app" class="btn btn-primary btn-large">
-                        <span>Contact Us</span>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                            <polyline points="22,6 12,13 2,6"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- FOOTER -->
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-top">
-                <div class="footer-brand">
-                    <span class="footer-logo">Creative Ventures</span>
-                    <p class="footer-tagline">Building apps that matter.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms & Conditions</a>
-                    <a href="imprint.html">Imprint</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="copyright">&copy; <span id="year"></span> Creative Ventures. All rights reserved.</p>
-            </div>
+        <div class="footer-top">
+            <div class="footer-brand"><span class="footer-wm">Creative Ventures</span><span class="mono dim">— EVIDENCE OVER OPINION</span></div>
+            <nav class="footer-links">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="imprint.html">Imprint</a>
+            </nav>
         </div>
+        <p class="mono dim footer-copy">© <span id="year"></span> Creative Ventures GmbH · Cosimastraße 121, 81925 München</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
